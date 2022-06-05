@@ -10,7 +10,7 @@ class ObjectMapperApplicationTests {
 
     @Test
     void contextLoads() throws JsonProcessingException {
-        System.out.println("---------");
+        System.out.println("-----------");
 
         // Text JSON -> Object
         // Object -> Text JSON
@@ -22,7 +22,7 @@ class ObjectMapperApplicationTests {
 
         // object -> text
         // object mapper 는 get method를 활용한다.
-        var user = new User("steve", 10,"010-2328-5423");
+        var user = new User("steve", 10,"010-2328-5423", "서울시 강남구 테헤란로");
 
         var text = objectMapper.writeValueAsString(user);
         System.out.println(text);

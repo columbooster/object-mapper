@@ -7,17 +7,24 @@ public class User {
     private int age;
     @JsonProperty("phone_number")
     private String phoneNumber;
+    private String adderess;
 
     public User(){
         this.name = null;
         this.age = 0;
         this.phoneNumber = null;
+        this.adderess = null;
     }
 
-    public User(String name, int age, String phoneNumber) {
+    public User(String name, int age, String phoneNumber, String address) {
         this.name = name;
         this.age = age;
         this.phoneNumber = phoneNumber;
+        this.adderess = address;
+    }
+
+    public String getAdderess() {
+        return adderess;
     }
 
     public String getPhoneNumber() {
@@ -33,7 +40,7 @@ public class User {
     }
 
     public User DefaultUser(){
-        return new User("default",0,"010-1111-2222");
+        return new User("default",0,"010-1111-2222", "서울시 강남구 테헤란로");
     }
 
     @Override
@@ -42,6 +49,7 @@ public class User {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", adderess='" + adderess + '\'' +
                 '}';
     }
 }
